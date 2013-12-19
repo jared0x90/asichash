@@ -7,11 +7,11 @@
 <?
 require_once('bootstrap.php');
 
-define('QUERY_CURRENT_EXCHANGE_RATE', "SELECT * FROM bitcoin_exchange_rate");
+define('SQL_CURRENT_EXCHANGE_RATE', "SELECT * FROM bitcoin_exchange_rate WHERE source_id = 1 AND field = 'avg' ORDER BY date DESC LIMIT 1");
 define('DATE_DAY_STRING', "M jS, Y");
 define('DATE_TIME_STRING', "g:i:s A");
 
-$results = $db->query(QUERY_CURRENT_EXCHANGE_RATE);
+$results = $db->query(SQL_CURRENT_EXCHANGE_RATE);
 
 ?>
 <h1>ASIC hash</h1>
