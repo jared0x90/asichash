@@ -1,6 +1,5 @@
 <?
-
-require_once('bootstrap.php');
+require_once "bootstrap-worker.php";
 
 define('MTGOX_TICKER_URL',  'http://data.mtgox.com/api/2/BTCUSD/money/ticker');
 define('HTTP_STATUS_OK',    200);

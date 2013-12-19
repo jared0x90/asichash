@@ -1,0 +1,1 @@
+<?chdir("..");require_once('bootstrap.php');
