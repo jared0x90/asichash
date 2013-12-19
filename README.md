@@ -1,2 +1,2 @@
-# asichash
-The source code to run asichas.com
+# ASIChash
+The source code to run ASIChash.com
