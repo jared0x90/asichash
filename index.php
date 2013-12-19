@@ -7,23 +7,20 @@
 <?
 require_once('bootstrap.php');
 
-# $db = new PDO('sqlite:asic.sqlite');
 define('QUERY_CURRENT_EXCHANGE_RATE', "SELECT * FROM bitcoin_exchange_rate");
 define('DATE_DAY_STRING', "M jS, Y");
 define('DATE_TIME_STRING', "g:i:s A");
-# date_default_timezone_set('America/New_York');
-date_default_timezone_set('UTC');
 
 $results = $db->query(QUERY_CURRENT_EXCHANGE_RATE);
-# foreach($results as $row){
-    # var_dump($row);
-# }
+
 ?>
 <h1>ASIC hash</h1>
-<h2>BitCoin ASIC Performance, ROI Calculator</h2>
+<h2>BitCoin, LiteCoin, *coin - ASIC, GPU, CPU Performance; ROI Calculator</h2>
 <?
+foreach($results as $row){
+  var_dump($row);
+}
 # echo date(DATE_DAY_STRING) . "<br>\n" . date(DATE_TIME_STRING);
-
 ?>
 <footer>
 BitCoin: <a href="bitcoin:1HbQedyYZaw5kAVMDEX9xyS89E5wimKgSK">1HbQedyYZaw5kAVMDEX9xyS89E5wimKgSK</a><br>
