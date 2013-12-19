@@ -1,1 +1,1 @@
-<?$db = new PDO('sqlite:asic.sqlite');
+<?$db = new PDO('sqlite:'.dirname(__FILE__).'/asic.sqlite');
