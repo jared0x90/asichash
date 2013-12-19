@@ -13,11 +13,26 @@ if($response->success && $response->status_code == HTTP_STATUS_OK){
   $json_response = $response->body;
   $decode = json_decode($json_response);
   if($decode->result == MTGOX_STATUS_OK){
+    # Prepare SQL
     $mtgox_insert_statement = $db->prepare(SQL_MTGOX_INSERT);
+
+    # Bind source and timestamp
     $mtgox_insert_statement->bindValue(':date', microtime(true));
-    $mtgox_insert_statement->bindValue(':usd', (float)$decode->data->avg->value);
     $mtgox_insert_statement->bindValue(':source_id', 1);
+
+    # Average values
+    $mtgox_insert_statement->bindValue(':usd', (float)$decode->data->avg->value);
     $mtgox_insert_statement->bindValue(':field', 'avg');
+    $result = $mtgox_insert_statement->execute();
+
+    # High values
+    $mtgox_insert_statement->bindValue(':usd', (float)$decode->data->high->value);
+    $mtgox_insert_statement->bindValue(':field', 'high');
+    $result = $mtgox_insert_statement->execute();
+
+    # Low values
+    $mtgox_insert_statement->bindValue(':usd', (float)$decode->data->low->value);
+    $mtgox_insert_statement->bindValue(':field', 'low');
     $result = $mtgox_insert_statement->execute();
   }
 }else{
