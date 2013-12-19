@@ -6,7 +6,6 @@
 <title>ASIChash - BitCoin ASIC Performance, ROI</title>
 <?
 require_once('bootstrap.php');
-require_once('php/functions.php');
 
 define('SQL_CURRENT_MTGOX_AVG_EXCHANGE_RATE', "SELECT * FROM bitcoin_exchange_rate WHERE source_id = 1 AND field = 'avg' ORDER BY date DESC LIMIT 1");
 define('SQL_CURRENT_MTGOX_HIGH_EXCHANGE_RATE', "SELECT * FROM bitcoin_exchange_rate WHERE source_id = 1 AND field = 'avg' ORDER BY date DESC LIMIT 1");
