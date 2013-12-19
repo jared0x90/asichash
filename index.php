@@ -5,6 +5,8 @@
 <link href="style.css" rel="stylesheet" media="all">
 <title>ASIChash - BitCoin ASIC Performance, ROI</title>
 <?php
+
+require_once('db.php');
 define('QUERY_CURRENT_EXCHANGE_RATE', "SELECT * FROM bitcoin_exchange_rate");
 define('DATE_DAY_STRING', "M jS, Y");
 define('DATE_TIME_STRING', "g:i:s A");
@@ -15,7 +17,7 @@ date_default_timezone_set('UTC');
 
 
 
-$db = new PDO('sqlite:asic.sqlite');
+
 $results = $db->query(QUERY_CURRENT_EXCHANGE_RATE);
 foreach($results as $row){
     # var_dump($row);

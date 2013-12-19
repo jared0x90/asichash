@@ -1,0 +1,1 @@
+<?$db = new PDO('sqlite:asic.sqlite');
