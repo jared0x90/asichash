@@ -22,6 +22,6 @@ var_dump($data);
 <h2>BitCoin, LiteCoin, *coin - ASIC, GPU, CPU Performance; ROI Calculator</h2>
 <footer>
 BitCoin: <a href="bitcoin:1HbQedyYZaw5kAVMDEX9xyS89E5wimKgSK">1HbQedyYZaw5kAVMDEX9xyS89E5wimKgSK</a><br>
-<a href="https://cex.io/r/1/jared0x90/0/">Hosted Mining</a>
+<a href="https://cex.io/r/1/jwd83/0/">Hosted Mining</a>
 </footer>
 </html>
